@@ -5,6 +5,7 @@ Osnovni iskazi, aritmetički izrazi, rad sa nizovima prostih tipova, i rad sa ma
 ## Uputstvo za pokretanje
 Preporucuje se pokretanje iz komandne linije terminala, unutar foldera projekta, koristeci PowerShell. Pokretanje iz build.xml, unutar Eclipse okruzenja, je isto opcija, doduse nece komanda read raditi u tom slucaju.
 Komanda za generisanje leksera se naziva lexerGen u Ant build fajlu. Alternativno moze se pokrenuti sledeca komanda u terminalu, unutar glavnog foldera:
+
 ```java -jar lib/JFlex.jar -d src/rs/ac/bg/etf/pp1/ spec/mjlexer.lex```
 
 Za generisanje parsera potrebno je izabrati repackage unutar build.xml fajla ili izvrsiti sledecu komandu:
