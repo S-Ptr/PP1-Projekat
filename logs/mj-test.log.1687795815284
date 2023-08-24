@@ -1,0 +1,35 @@
+INFO  18:09:39,012 - Izabrani fajl: C:\Users\User\Desktop\pp1jul\MJCompiler\test\test1.mj
+INFO  18:09:39,013 - [[~~~=============================~~~MJ COMPILER STARTING~~~=============================~~~]]
+INFO  18:09:39,014 - {{================================][   Leksicka analiza   ][================================}}
+INFO  18:09:39,031 - #2 program
+INFO  18:09:39,031 - #28 test1
+INFO  18:09:39,031 - #6 const
+INFO  18:09:39,032 - #28 int
+INFO  18:09:39,032 - #28 a
+INFO  18:09:39,033 - #24 =
+INFO  18:09:39,033 - #25 f
+INFO  18:09:39,033 - #9 ;
+INFO  18:09:39,033 - #6 const
+INFO  18:09:39,034 - #28 char
+INFO  18:09:39,034 - #28 b
+INFO  18:09:39,034 - #24 =
+INFO  18:09:39,034 - #27 646
+INFO  18:09:39,034 - #9 ;
+INFO  18:09:39,035 - #6 const
+INFO  18:09:39,035 - #28 bool
+INFO  18:09:39,035 - #28 c
+INFO  18:09:39,035 - #24 =
+INFO  18:09:39,035 - #27 5
+INFO  18:09:39,035 - #9 ;
+INFO  18:09:39,035 - #28 int
+INFO  18:09:39,035 - #28 previsedimenzija
+INFO  18:09:39,035 - #13 [
+INFO  18:09:39,035 - #14 ]
+INFO  18:09:39,035 - #13 [
+INFO  18:09:39,035 - #14 ]
+INFO  18:09:39,035 - #13 [
+ERROR 18:09:39,035 - 
+Sintaksna greska na liniji 9
+ERROR 18:09:39,035 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9
+INFO  18:09:39,035 - {{================================][   Sintaksna analiza   ][===============================}}
+ERROR 18:09:39,036 - Parser ne moze nastaviti sa radom zbog prethodnih greskaa. Ispravite program pa pokusajte opet.

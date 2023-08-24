@@ -1,0 +1,226 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	boolean errorDetected = false;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.info(msg.toString());
+    }
+    
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROG, RETURN, PRINT, READ, CONST, NEW, COMMA, SEMIC, VOID;
+terminal LPAREN, RPAREN, LANGLE, RANGLE, LBRACE, RBRACE;
+terminal INCR, DECR, PLUS, MINUS, MUL, DIV, MOD, EQUAL;
+
+terminal Character CHAR;
+terminal Boolean BOOL;
+terminal Integer NUMBER;
+terminal String IDENT;
+
+nonterminal FormPars, FormParsList, Declarations, Declaration;
+nonterminal ConstDecl, MethVarDecl, VarDecl;
+nonterminal Statement, StatementList, DesignatorStatement;
+nonterminal Addop, Mulop, Array;
+
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Factor, Term, ConstList, VarList, ReturnType;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct NumConst,CharConst, BoolConst;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstVal;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethName, Program, MethodDecl, Designator, ConstListUnit, VarListUnit, FormParamUnit;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ArrayName;
+
+Program ::= (Program) PROG ProgName Declarations LBRACE MethodDecl RBRACE;
+
+ProgName ::= (ProgName) IDENT:progName;
+
+MethodDecl ::= (MethodDecl) ReturnType MethName LPAREN FormPars RPAREN MethVarDecl LBRACE StatementList RBRACE;
+
+ReturnType ::= (ConcreteReturnType) Type
+				|
+				(VoidReturnType) VOID
+				;
+
+MethName ::= (MethName) IDENT:methName;
+
+FormPars ::= (FormParams) FormParsList
+			|
+			(NoFormPars) /* Epsilon */
+			;
+			
+FormParsList ::= (FormParamList) FormParsList COMMA FormParamUnit
+				|
+				(FormParamElem) FormParamUnit;
+
+FormParamUnit ::= (FormParamUnit) Type IDENT:formParamName Array;
+			
+
+
+Declarations ::= (DeclarationList) Declarations Declaration
+				|
+				(NoDeclaration) /* EPsilon */;
+				
+Declaration ::=	(ConstDeclarations) ConstDecl
+				|
+				(VarDeclarations) VarDecl;
+
+ConstDecl ::= (ConstDecl) CONST Type ConstList SEMIC;
+
+ConstList ::= (Constants) ConstList COMMA ConstListUnit
+			|
+			(ConstListElem) ConstListUnit;
+
+ConstListUnit ::= (SingleConstDecl) IDENT:constName EQUAL ConstVal
+					|
+					(ConstUnitError) error {: parser.report_error("Greska", null); :};
+					
+MethVarDecl ::= (MethVars) MethVarDecl VarDecl
+				|
+				(NoMethVars) /* Epsilon */
+				;
+
+VarDecl ::= (VarDecl) Type VarList SEMIC;
+
+VarList ::= (VarsList) VarList COMMA VarListUnit
+			|
+			(VarListElem) VarListUnit;
+			
+VarListUnit ::= (VarListUnit) IDENT:name Array;
+
+
+StatementList ::= (Statements) StatementList Statement
+				|
+				(NoStatement) /* Epsilon */
+				;
+				
+Statement ::= (DesigStmt) DesignatorStatement SEMIC
+			|
+			(RetExprStmt) RETURN Expr SEMIC
+			|
+			(RetStmt) RETURN SEMIC
+			|
+			(ReadStmt) READ LPAREN Designator RPAREN SEMIC
+			|
+			(PrintStmt) PRINT LPAREN Expr RPAREN SEMIC
+			|
+			(PrintNumStmt) PRINT LPAREN Expr COMMA NumConst RPAREN SEMIC
+			|
+			(StmtBlock) LBRACE StatementList RBRACE;
+			
+DesignatorStatement ::= (AssignDeSt) Designator EQUAL Expr
+						|
+						(AssignDeStError) Designator EQUAL error {: parser.report_error("Greska", null); :}
+						|
+						(IncrDeSt) Designator INCR
+						|
+						(DecrDeSt) Designator DECR;
+					
+
+				
+Expr ::= (ExprList) Expr Addop Term
+		|
+		(NegationExpr) MINUS Term
+		|
+		(TermExpr) Term;
+		
+Addop ::= (PlusOp) PLUS
+			|
+			(MinusOp) MINUS;
+			
+Term ::= (TermList) Term Mulop Factor
+		|
+		(FactorTerm) Factor;
+		
+Mulop ::= (MultOp) MUL
+			|
+			(DivOp) DIV
+			|
+			(ModOp) MOD;
+
+Factor ::= (DesignatorFactor) Designator
+			|
+			(ExprFactor) LPAREN Expr RPAREN
+			|
+			(NewArray) NEW Type LANGLE Expr RANGLE
+			|
+			(NewMatrix) NEW Type LANGLE Expr:e1 RANGLE LANGLE Expr:e2 RANGLE
+			|
+			(NumFactor) NumConst
+			|
+			(CharFactor) CharConst
+			|
+			(BoolFactor) BoolConst; 
+			
+Designator ::= (MatrixDesignator) ArrayName LANGLE Expr:e1 RANGLE LANGLE Expr:e2 RANGLE
+				|
+				(ArrayDesignator) ArrayName LANGLE Expr RANGLE
+				|
+				(DataDesignator) IDENT:desigName;
+				
+ArrayName ::= (ArrayName) IDENT:arrayName;
+
+Array ::= (Matrix) LANGLE RANGLE LANGLE RANGLE
+		|
+		(Arr) LANGLE RANGLE
+		|
+		(NotArray) /* Epsilon */
+		;
+
+
+Type ::= (Type) IDENT:typeName;
+
+ConstVal ::= (ConstInt) NumConst
+			|
+			(ConstChar) CharConst
+			|
+			(ConstBool) BoolConst;
+			
+NumConst ::= (NumConst) NUMBER:constValue;
+CharConst ::= (CharConst) CHAR:constValue;
+BoolConst ::= (BoolConst) BOOL:constValue;
+				
+
+
+
+

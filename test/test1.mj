@@ -1,0 +1,28 @@
+// Test1
+
+program test1
+
+	const int a = 'f'; 
+	const char b = 646;
+	const bool c = 5;
+
+	const char nizch[];
+	
+{
+	void main()
+		int a;
+	{
+		
+		b++;
+		print(nizch);
+		read(nizch);
+		nizch = new char[c][6];
+		a = c;
+		a= b;
+		b = c;
+		nizch = a;
+		
+	}
+}
+
+

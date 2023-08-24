@@ -1,0 +1,83 @@
+INFO  18:58:55,058 - Izabrani fajl: C:\Users\User\Desktop\pp1jul\MJCompiler\test\test1.mj
+INFO  18:58:55,059 - [[~~~=============================~~~MJ COMPILER STARTING~~~=============================~~~]]
+INFO  18:58:55,060 - {{================================][   Leksicka analiza   ][================================}}
+INFO  18:58:55,077 - #2 program
+INFO  18:58:55,078 - #28 test1
+INFO  18:58:55,078 - #6 const
+INFO  18:58:55,078 - #28 int
+INFO  18:58:55,078 - #28 a
+INFO  18:58:55,079 - #24 =
+INFO  18:58:55,079 - #25 f
+INFO  18:58:55,079 - #9 ;
+INFO  18:58:55,079 - #6 const
+INFO  18:58:55,080 - #28 char
+INFO  18:58:55,080 - #28 b
+INFO  18:58:55,080 - #24 =
+INFO  18:58:55,080 - #27 646
+INFO  18:58:55,080 - #9 ;
+INFO  18:58:55,081 - #6 const
+INFO  18:58:55,081 - #28 bool
+INFO  18:58:55,081 - #28 c
+INFO  18:58:55,081 - #24 =
+INFO  18:58:55,081 - #27 5
+INFO  18:58:55,081 - #9 ;
+INFO  18:58:55,081 - #6 const
+INFO  18:58:55,081 - #28 char
+INFO  18:58:55,081 - #28 nizch
+INFO  18:58:55,081 - #13 [
+ERROR 18:58:55,081 - 
+Sintaksna greska na liniji 9
+INFO  18:58:55,081 - #14 ]
+INFO  18:58:55,081 - #9 ;
+INFO  18:58:55,081 - #15 {
+INFO  18:58:55,082 - #10 void
+INFO  18:58:55,082 - #28 main
+ERROR 18:58:55,082 - Greska
+INFO  18:58:55,082 - #11 (
+INFO  18:58:55,083 - #12 )
+INFO  18:58:55,083 - #28 int
+INFO  18:58:55,083 - #28 a
+INFO  18:58:55,083 - #9 ;
+INFO  18:58:55,084 - #15 {
+INFO  18:58:55,084 - #28 b
+INFO  18:58:55,085 - #17 ++
+INFO  18:58:55,085 - #9 ;
+INFO  18:58:55,085 - #4 print
+INFO  18:58:55,085 - #11 (
+INFO  18:58:55,085 - #28 nizch
+INFO  18:58:55,085 - #12 )
+INFO  18:58:55,085 - #9 ;
+INFO  18:58:55,086 - #5 read
+INFO  18:58:55,086 - #11 (
+INFO  18:58:55,086 - #28 nizch
+INFO  18:58:55,086 - #12 )
+INFO  18:58:55,086 - #9 ;
+INFO  18:58:55,086 - #28 nizch
+INFO  18:58:55,086 - #24 =
+INFO  18:58:55,086 - #7 new
+INFO  18:58:55,086 - #28 char
+INFO  18:58:55,086 - #13 [
+INFO  18:58:55,086 - #28 c
+INFO  18:58:55,086 - #14 ]
+INFO  18:58:55,086 - #13 [
+INFO  18:58:55,086 - #27 6
+INFO  18:58:55,086 - #14 ]
+INFO  18:58:55,086 - #9 ;
+INFO  18:58:55,087 - #28 a
+INFO  18:58:55,087 - #24 =
+INFO  18:58:55,087 - #28 c
+INFO  18:58:55,087 - #9 ;
+INFO  18:58:55,087 - #28 a
+INFO  18:58:55,087 - #24 =
+INFO  18:58:55,087 - #28 b
+INFO  18:58:55,087 - #9 ;
+INFO  18:58:55,087 - #4 print
+INFO  18:58:55,087 - #11 (
+INFO  18:58:55,087 - #28 b
+INFO  18:58:55,087 - #8 ,
+INFO  18:58:55,087 - #28 a
+ERROR 18:58:55,087 - 
+Sintaksna greska na liniji 22
+ERROR 18:58:55,087 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 22
+INFO  18:58:55,087 - {{================================][   Sintaksna analiza   ][===============================}}
+ERROR 18:58:55,088 - Parser ne moze nastaviti sa radom zbog prethodnih greskaa. Ispravite program pa pokusajte opet.

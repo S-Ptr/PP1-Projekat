@@ -1,0 +1,6 @@
+INFO  18:31:18,142 - Compiling source file: /home/user/eclipse-workspace/MJCompiler/test/program.mj
+INFO  18:31:18,148 - #2 program
+INFO  18:31:18,148 - #24 MJProgram
+ERROR 18:31:18,148 - 
+Sintaksna greska na liniji 1
+ERROR 18:31:18,149 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 1

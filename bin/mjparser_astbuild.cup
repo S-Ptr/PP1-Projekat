@@ -1,0 +1,235 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	boolean errorDetected = false;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.info(msg.toString());
+    }
+    
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROG, RETURN, PRINT, READ, CONST, NEW, COMMA, SEMIC, VOID;
+terminal LPAREN, RPAREN, LANGLE, RANGLE, LBRACE, RBRACE;
+terminal INCR, DECR, PLUS, MINUS, MUL, DIV, MOD, EQUAL;
+
+terminal Character CHAR;
+terminal Boolean BOOL;
+terminal Integer NUMBER;
+terminal String IDENT;
+
+nonterminal FormPars FormPars;
+nonterminal FormParsList FormParsList;
+nonterminal Declarations Declarations;
+nonterminal Declaration Declaration;
+nonterminal ConstDecl ConstDecl;
+nonterminal MethVarDecl MethVarDecl;
+nonterminal VarDecl VarDecl;
+nonterminal Statement Statement;
+nonterminal StatementList StatementList;
+nonterminal DesignatorStatement DesignatorStatement;
+nonterminal Addop Addop;
+nonterminal Mulop Mulop;
+nonterminal Array Array;
+
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Factor, Term, ConstList, VarList, ReturnType;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct NumConst,CharConst, BoolConst;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstVal;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethName, Program, MethodDecl, Designator, ConstListUnit, VarListUnit, FormParamUnit;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ArrayName;
+
+Program ::= (Program) PROG ProgName:P1 Declarations:D2 LBRACE MethodDecl:M3 RBRACE {: RESULT=new Program(P1, D2, M3); RESULT.setLine(P1left); :};
+
+ProgName ::= (ProgName) IDENT:progName {: RESULT=new ProgName(progName); RESULT.setLine(progNameleft); :};
+
+MethodDecl ::= (MethodDecl) ReturnType:R1 MethName:M2 LPAREN FormPars:F3 RPAREN MethVarDecl:M4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodDecl(R1, M2, F3, M4, S5); RESULT.setLine(R1left); :};
+
+ReturnType ::= (ConcreteReturnType) Type:T1 {: RESULT=new ConcreteReturnType(T1); RESULT.setLine(T1left); :}
+				|
+				(VoidReturnType) VOID {: RESULT=new VoidReturnType(); :}
+				;
+
+MethName ::= (MethName) IDENT:methName {: RESULT=new MethName(methName); RESULT.setLine(methNameleft); :};
+
+FormPars ::= (FormParams) FormParsList:F1 {: RESULT=new FormParams(F1); RESULT.setLine(F1left); :}
+			|
+			(NoFormPars) {: RESULT=new NoFormPars(); :} /* Epsilon */
+			;
+			
+FormParsList ::= (FormParamList) FormParsList:F1 COMMA FormParamUnit:F2 {: RESULT=new FormParamList(F1, F2); RESULT.setLine(F1left); :}
+				|
+				(FormParamElem) FormParamUnit:F1 {: RESULT=new FormParamElem(F1); RESULT.setLine(F1left); :};
+
+FormParamUnit ::= (FormParamUnit) Type:T1 IDENT:formParamName Array:A2 {: RESULT=new FormParamUnit(T1, formParamName, A2); RESULT.setLine(T1left); :};
+			
+
+
+Declarations ::= (DeclarationList) Declarations:D1 Declaration:D2 {: RESULT=new DeclarationList(D1, D2); RESULT.setLine(D1left); :}
+				|
+				(NoDeclaration) {: RESULT=new NoDeclaration(); :} /* EPsilon */;
+				
+Declaration ::=	(ConstDeclarations) ConstDecl:C1 {: RESULT=new ConstDeclarations(C1); RESULT.setLine(C1left); :}
+				|
+				(VarDeclarations) VarDecl:V1 {: RESULT=new VarDeclarations(V1); RESULT.setLine(V1left); :};
+
+ConstDecl ::= (ConstDecl) CONST Type:T1 ConstList:C2 SEMIC {: RESULT=new ConstDecl(T1, C2); RESULT.setLine(T1left); :};
+
+ConstList ::= (Constants) ConstList:C1 COMMA ConstListUnit:C2 {: RESULT=new Constants(C1, C2); RESULT.setLine(C1left); :}
+			|
+			(ConstListElem) ConstListUnit:C1 {: RESULT=new ConstListElem(C1); RESULT.setLine(C1left); :};
+
+ConstListUnit ::= (SingleConstDecl) IDENT:constName EQUAL ConstVal:C1 {: RESULT=new SingleConstDecl(constName, C1); RESULT.setLine(constNameleft); :}
+					|
+					(ConstUnitError) error {: parser.report_error("Greska", null); :} {: RESULT=new ConstUnitError(); :};
+					
+MethVarDecl ::= (MethVars) MethVarDecl:M1 VarDecl:V2 {: RESULT=new MethVars(M1, V2); RESULT.setLine(M1left); :}
+				|
+				(NoMethVars) {: RESULT=new NoMethVars(); :} /* Epsilon */
+				;
+
+VarDecl ::= (VarDecl) Type:T1 VarList:V2 SEMIC {: RESULT=new VarDecl(T1, V2); RESULT.setLine(T1left); :};
+
+VarList ::= (VarsList) VarList:V1 COMMA VarListUnit:V2 {: RESULT=new VarsList(V1, V2); RESULT.setLine(V1left); :}
+			|
+			(VarListElem) VarListUnit:V1 {: RESULT=new VarListElem(V1); RESULT.setLine(V1left); :};
+			
+VarListUnit ::= (VarListUnit) IDENT:name Array:A1 {: RESULT=new VarListUnit(name, A1); RESULT.setLine(nameleft); :};
+
+
+StatementList ::= (Statements) StatementList:S1 Statement:S2 {: RESULT=new Statements(S1, S2); RESULT.setLine(S1left); :}
+				|
+				(NoStatement) {: RESULT=new NoStatement(); :} /* Epsilon */
+				;
+				
+Statement ::= (DesigStmt) DesignatorStatement:D1 SEMIC {: RESULT=new DesigStmt(D1); RESULT.setLine(D1left); :}
+			|
+			(RetExprStmt) RETURN Expr:E1 SEMIC {: RESULT=new RetExprStmt(E1); RESULT.setLine(E1left); :}
+			|
+			(RetStmt) RETURN SEMIC {: RESULT=new RetStmt(); :}
+			|
+			(ReadStmt) READ LPAREN Designator:D1 RPAREN SEMIC {: RESULT=new ReadStmt(D1); RESULT.setLine(D1left); :}
+			|
+			(PrintStmt) PRINT LPAREN Expr:E1 RPAREN SEMIC {: RESULT=new PrintStmt(E1); RESULT.setLine(E1left); :}
+			|
+			(PrintNumStmt) PRINT LPAREN Expr:E1 COMMA NumConst:N2 RPAREN SEMIC {: RESULT=new PrintNumStmt(E1, N2); RESULT.setLine(E1left); :}
+			|
+			(StmtBlock) LBRACE StatementList:S1 RBRACE {: RESULT=new StmtBlock(S1); RESULT.setLine(S1left); :};
+			
+DesignatorStatement ::= (AssignDeSt) Designator:D1 EQUAL Expr:E2 {: RESULT=new AssignDeSt(D1, E2); RESULT.setLine(D1left); :}
+						|
+						(AssignDeStError) Designator:D1 EQUAL error {: parser.report_error("Greska", null); :} {: RESULT=new AssignDeStError(D1); RESULT.setLine(D1left); :}
+						|
+						(IncrDeSt) Designator:D1 INCR {: RESULT=new IncrDeSt(D1); RESULT.setLine(D1left); :}
+						|
+						(DecrDeSt) Designator:D1 DECR {: RESULT=new DecrDeSt(D1); RESULT.setLine(D1left); :};
+					
+
+				
+Expr ::= (ExprList) Expr:E1 Addop:A2 Term:T3 {: RESULT=new ExprList(E1, A2, T3); RESULT.setLine(E1left); :}
+		|
+		(NegationExpr) MINUS Term:T1 {: RESULT=new NegationExpr(T1); RESULT.setLine(T1left); :}
+		|
+		(TermExpr) Term:T1 {: RESULT=new TermExpr(T1); RESULT.setLine(T1left); :};
+		
+Addop ::= (PlusOp) PLUS {: RESULT=new PlusOp(); :}
+			|
+			(MinusOp) MINUS {: RESULT=new MinusOp(); :};
+			
+Term ::= (TermList) Term:T1 Mulop:M2 Factor:F3 {: RESULT=new TermList(T1, M2, F3); RESULT.setLine(T1left); :}
+		|
+		(FactorTerm) Factor:F1 {: RESULT=new FactorTerm(F1); RESULT.setLine(F1left); :};
+		
+Mulop ::= (MultOp) MUL {: RESULT=new MultOp(); :}
+			|
+			(DivOp) DIV {: RESULT=new DivOp(); :}
+			|
+			(ModOp) MOD {: RESULT=new ModOp(); :};
+
+Factor ::= (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
+			|
+			(ExprFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ExprFactor(E1); RESULT.setLine(E1left); :}
+			|
+			(NewArray) NEW Type:T1 LANGLE Expr:E2 RANGLE {: RESULT=new NewArray(T1, E2); RESULT.setLine(T1left); :}
+			|
+			(NewMatrix) NEW Type:T1 LANGLE Expr:e1 RANGLE LANGLE Expr:e2 RANGLE {: RESULT=new NewMatrix(T1, e1, e2); RESULT.setLine(T1left); :}
+			|
+			(NumFactor) NumConst:N1 {: RESULT=new NumFactor(N1); RESULT.setLine(N1left); :}
+			|
+			(CharFactor) CharConst:C1 {: RESULT=new CharFactor(C1); RESULT.setLine(C1left); :}
+			|
+			(BoolFactor) BoolConst:B1 {: RESULT=new BoolFactor(B1); RESULT.setLine(B1left); :}; 
+			
+Designator ::= (MatrixDesignator) ArrayName:A1 LANGLE Expr:e1 RANGLE LANGLE Expr:e2 RANGLE {: RESULT=new MatrixDesignator(A1, e1, e2); RESULT.setLine(A1left); :}
+				|
+				(ArrayDesignator) ArrayName:A1 LANGLE Expr:E2 RANGLE {: RESULT=new ArrayDesignator(A1, E2); RESULT.setLine(A1left); :}
+				|
+				(DataDesignator) IDENT:desigName {: RESULT=new DataDesignator(desigName); RESULT.setLine(desigNameleft); :};
+				
+ArrayName ::= (ArrayName) IDENT:arrayName {: RESULT=new ArrayName(arrayName); RESULT.setLine(arrayNameleft); :};
+
+Array ::= (Matrix) LANGLE RANGLE LANGLE RANGLE {: RESULT=new Matrix(); :}
+		|
+		(Arr) LANGLE RANGLE {: RESULT=new Arr(); :}
+		|
+		(NotArray) {: RESULT=new NotArray(); :} /* Epsilon */
+		;
+
+
+Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :};
+
+ConstVal ::= (ConstInt) NumConst:N1 {: RESULT=new ConstInt(N1); RESULT.setLine(N1left); :}
+			|
+			(ConstChar) CharConst:C1 {: RESULT=new ConstChar(C1); RESULT.setLine(C1left); :}
+			|
+			(ConstBool) BoolConst:B1 {: RESULT=new ConstBool(B1); RESULT.setLine(B1left); :};
+			
+NumConst ::= (NumConst) NUMBER:constValue {: RESULT=new NumConst(constValue); RESULT.setLine(constValueleft); :};
+CharConst ::= (CharConst) CHAR:constValue {: RESULT=new CharConst(constValue); RESULT.setLine(constValueleft); :};
+BoolConst ::= (BoolConst) BOOL:constValue {: RESULT=new BoolConst(constValue); RESULT.setLine(constValueleft); :};
+				
+
+
+
+

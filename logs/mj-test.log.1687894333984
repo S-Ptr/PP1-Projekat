@@ -1,0 +1,103 @@
+INFO  21:32:13,947 - Compiling source file: C:\Users\User\Desktop\pp1jul\MJCompiler\test\test2.mj
+INFO  21:32:13,964 - #2 program
+INFO  21:32:13,964 - #28 test2
+INFO  21:32:13,964 - #6 const
+INFO  21:32:13,965 - #28 int
+INFO  21:32:13,965 - #28 one
+INFO  21:32:13,965 - #24 =
+INFO  21:32:13,965 - #27 1
+INFO  21:32:13,965 - #9 ;
+INFO  21:32:13,966 - #28 int
+INFO  21:32:13,966 - #28 mat
+INFO  21:32:13,966 - #13 [
+INFO  21:32:13,966 - #14 ]
+INFO  21:32:13,966 - #13 [
+INFO  21:32:13,967 - #14 ]
+INFO  21:32:13,967 - #9 ;
+INFO  21:32:13,967 - #28 int
+INFO  21:32:13,968 - #28 niz
+INFO  21:32:13,968 - #13 [
+INFO  21:32:13,968 - #14 ]
+INFO  21:32:13,968 - #9 ;
+INFO  21:32:13,968 - #28 int
+INFO  21:32:13,968 - #28 mat2
+INFO  21:32:13,969 - #13 [
+INFO  21:32:13,969 - #14 ]
+INFO  21:32:13,969 - #13 [
+INFO  21:32:13,969 - #14 ]
+INFO  21:32:13,969 - #9 ;
+INFO  21:32:13,969 - #15 {
+INFO  21:32:13,969 - #10 void
+INFO  21:32:13,969 - #28 main
+INFO  21:32:13,969 - #11 (
+INFO  21:32:13,970 - #12 )
+INFO  21:32:13,970 - #15 {
+INFO  21:32:13,970 - #28 niz
+INFO  21:32:13,970 - #24 =
+INFO  21:32:13,970 - #7 new
+INFO  21:32:13,970 - #28 int
+INFO  21:32:13,971 - #13 [
+INFO  21:32:13,971 - #27 3
+INFO  21:32:13,971 - #14 ]
+INFO  21:32:13,971 - #9 ;
+INFO  21:32:13,971 - #28 niz
+INFO  21:32:13,971 - #13 [
+INFO  21:32:13,972 - #27 2
+INFO  21:32:13,972 - #14 ]
+INFO  21:32:13,972 - #24 =
+INFO  21:32:13,972 - #27 3
+INFO  21:32:13,972 - #9 ;
+INFO  21:32:13,972 - #28 mat
+INFO  21:32:13,972 - #24 =
+INFO  21:32:13,972 - #7 new
+INFO  21:32:13,972 - #28 int
+INFO  21:32:13,972 - #13 [
+INFO  21:32:13,972 - #27 2
+INFO  21:32:13,972 - #14 ]
+INFO  21:32:13,972 - #13 [
+INFO  21:32:13,972 - #27 2
+INFO  21:32:13,972 - #14 ]
+INFO  21:32:13,972 - #9 ;
+INFO  21:32:13,972 - #28 mat2
+INFO  21:32:13,973 - #24 =
+INFO  21:32:13,973 - #7 new
+INFO  21:32:13,973 - #28 int
+INFO  21:32:13,973 - #13 [
+INFO  21:32:13,973 - #27 3
+INFO  21:32:13,973 - #14 ]
+INFO  21:32:13,973 - #13 [
+INFO  21:32:13,973 - #27 4
+INFO  21:32:13,973 - #14 ]
+INFO  21:32:13,973 - #9 ;
+INFO  21:32:13,973 - #28 mat
+INFO  21:32:13,973 - #13 [
+INFO  21:32:13,973 - #27 0
+INFO  21:32:13,973 - #14 ]
+INFO  21:32:13,973 - #24 =
+INFO  21:32:13,973 - #28 niz
+INFO  21:32:13,973 - #9 ;
+INFO  21:32:13,973 - #4 print
+INFO  21:32:13,973 - #11 (
+INFO  21:32:13,973 - #28 mat
+INFO  21:32:13,973 - #13 [
+INFO  21:32:13,973 - #27 0
+INFO  21:32:13,974 - #14 ]
+INFO  21:32:13,974 - #13 [
+INFO  21:32:13,974 - #27 2
+INFO  21:32:13,974 - #14 ]
+INFO  21:32:13,974 - #12 )
+INFO  21:32:13,974 - #9 ;
+INFO  21:32:13,974 - #16 }
+INFO  21:32:13,974 - #16 }
+INFO  21:32:13,978 - Konstanta one deklarisana na liniji 3
+INFO  21:32:13,978 - Deklarisana globalna promenljiva - matrica mat na liniji 4
+INFO  21:32:13,978 - Deklarisana globalna promenljiva - niz niz na liniji 5
+INFO  21:32:13,978 - Deklarisana globalna promenljiva - matrica mat2 na liniji 6
+INFO  21:32:13,978 - Objekat niz je iskoriscen na liniji 11
+INFO  21:32:13,978 - Objekat mat je iskoriscen na liniji 13
+INFO  21:32:13,978 - Objekat mat2 je iskoriscen na liniji 14
+INFO  21:32:13,978 - Objekat niz je iskoriscen na liniji 15
+INFO  21:32:13,978 - Print calls = 1
+INFO  21:32:13,978 - Global variables = 3
+INFO  21:32:13,979 - Local Variabless = 0
+INFO  21:32:13,979 - Constants = 1

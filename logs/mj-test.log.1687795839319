@@ -1,0 +1,43 @@
+INFO  18:10:15,286 - Izabrani fajl: C:\Users\User\Desktop\pp1jul\MJCompiler\test\test1.mj
+INFO  18:10:15,287 - [[~~~=============================~~~MJ COMPILER STARTING~~~=============================~~~]]
+INFO  18:10:15,288 - {{================================][   Leksicka analiza   ][================================}}
+INFO  18:10:15,306 - #2 program
+INFO  18:10:15,306 - #28 test1
+INFO  18:10:15,306 - #6 const
+INFO  18:10:15,307 - #28 int
+INFO  18:10:15,307 - #28 a
+INFO  18:10:15,307 - #24 =
+INFO  18:10:15,307 - #25 f
+INFO  18:10:15,307 - #9 ;
+INFO  18:10:15,308 - #6 const
+INFO  18:10:15,308 - #28 char
+INFO  18:10:15,308 - #28 b
+INFO  18:10:15,308 - #24 =
+INFO  18:10:15,308 - #27 646
+INFO  18:10:15,309 - #9 ;
+INFO  18:10:15,309 - #6 const
+INFO  18:10:15,309 - #28 bool
+INFO  18:10:15,309 - #28 c
+INFO  18:10:15,309 - #24 =
+INFO  18:10:15,309 - #27 5
+INFO  18:10:15,309 - #9 ;
+INFO  18:10:15,309 - #6 const
+INFO  18:10:15,309 - #28 char
+INFO  18:10:15,310 - #28 nizch
+INFO  18:10:15,310 - #13 [
+ERROR 18:10:15,310 - 
+Sintaksna greska na liniji 9
+INFO  18:10:15,310 - #14 ]
+INFO  18:10:15,310 - #9 ;
+INFO  18:10:15,310 - #15 {
+INFO  18:10:15,310 - #10 void
+INFO  18:10:15,310 - #28 main
+ERROR 18:10:15,310 - Greska
+INFO  18:10:15,311 - #11 (
+INFO  18:10:15,311 - #12 )
+INFO  18:10:15,312 - #6 const
+ERROR 18:10:15,312 - 
+Sintaksna greska na liniji 13
+ERROR 18:10:15,312 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 13
+INFO  18:10:15,312 - {{================================][   Sintaksna analiza   ][===============================}}
+ERROR 18:10:15,312 - Parser ne moze nastaviti sa radom zbog prethodnih greskaa. Ispravite program pa pokusajte opet.

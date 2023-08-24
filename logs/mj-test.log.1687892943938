@@ -1,0 +1,303 @@
+INFO  21:02:30,470 - Izabrani fajl: C:\Users\User\Desktop\pp1jul\MJCompiler\test\test2.mj
+INFO  21:02:30,471 - [[~~~=============================~~~MJ COMPILER STARTING~~~=============================~~~]]
+INFO  21:02:30,472 - {{================================][   Leksicka analiza   ][================================}}
+INFO  21:02:30,488 - #2 program
+INFO  21:02:30,488 - #28 test2
+INFO  21:02:30,488 - #6 const
+INFO  21:02:30,489 - #28 int
+INFO  21:02:30,489 - #28 one
+INFO  21:02:30,489 - #24 =
+INFO  21:02:30,489 - #27 1
+INFO  21:02:30,489 - #9 ;
+INFO  21:02:30,490 - #28 int
+INFO  21:02:30,490 - #28 mat
+INFO  21:02:30,490 - #13 [
+INFO  21:02:30,491 - #14 ]
+INFO  21:02:30,491 - #13 [
+INFO  21:02:30,491 - #14 ]
+INFO  21:02:30,491 - #9 ;
+INFO  21:02:30,492 - #28 int
+INFO  21:02:30,492 - #28 niz
+INFO  21:02:30,492 - #13 [
+INFO  21:02:30,492 - #14 ]
+INFO  21:02:30,492 - #9 ;
+INFO  21:02:30,492 - #28 int
+INFO  21:02:30,493 - #28 mat2
+INFO  21:02:30,493 - #13 [
+INFO  21:02:30,493 - #14 ]
+INFO  21:02:30,493 - #13 [
+INFO  21:02:30,493 - #14 ]
+INFO  21:02:30,493 - #9 ;
+INFO  21:02:30,493 - #15 {
+INFO  21:02:30,493 - #10 void
+INFO  21:02:30,493 - #28 main
+INFO  21:02:30,493 - #11 (
+INFO  21:02:30,494 - #12 )
+INFO  21:02:30,494 - #15 {
+INFO  21:02:30,494 - #28 niz
+INFO  21:02:30,494 - #24 =
+INFO  21:02:30,494 - #7 new
+INFO  21:02:30,495 - #28 int
+INFO  21:02:30,495 - #13 [
+INFO  21:02:30,495 - #27 3
+INFO  21:02:30,495 - #14 ]
+INFO  21:02:30,495 - #9 ;
+INFO  21:02:30,495 - #28 mat
+INFO  21:02:30,495 - #24 =
+INFO  21:02:30,496 - #7 new
+INFO  21:02:30,496 - #28 int
+INFO  21:02:30,496 - #13 [
+INFO  21:02:30,496 - #27 2
+INFO  21:02:30,496 - #14 ]
+INFO  21:02:30,496 - #13 [
+INFO  21:02:30,496 - #27 2
+INFO  21:02:30,496 - #14 ]
+INFO  21:02:30,496 - #9 ;
+INFO  21:02:30,496 - #28 mat2
+INFO  21:02:30,496 - #24 =
+INFO  21:02:30,496 - #7 new
+INFO  21:02:30,496 - #28 int
+INFO  21:02:30,496 - #13 [
+INFO  21:02:30,496 - #27 3
+INFO  21:02:30,496 - #14 ]
+INFO  21:02:30,496 - #13 [
+INFO  21:02:30,496 - #27 4
+INFO  21:02:30,497 - #14 ]
+INFO  21:02:30,497 - #9 ;
+INFO  21:02:30,497 - #28 mat
+INFO  21:02:30,497 - #13 [
+INFO  21:02:30,497 - #27 0
+INFO  21:02:30,497 - #14 ]
+INFO  21:02:30,497 - #24 =
+INFO  21:02:30,497 - #28 niz
+INFO  21:02:30,497 - #9 ;
+INFO  21:02:30,497 - #16 }
+INFO  21:02:30,497 - #16 }
+INFO  21:02:30,498 - {{================================][   Sintaksna analiza   ][===============================}}
+INFO  21:02:30,501 - Program(
+  ProgName(
+   test2
+  ) [ProgName]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        DeclarationList(
+          NoDeclaration(
+          ) [NoDeclaration]
+          ConstDeclarations(
+            ConstDecl(
+              Type(
+               int
+              ) [Type]
+              ConstListElem(
+                SingleConstDecl(
+                 one
+                  ConstInt(
+                    NumConst(
+                     1
+                    ) [NumConst]
+                  ) [ConstInt]
+                ) [SingleConstDecl]
+              ) [ConstListElem]
+            ) [ConstDecl]
+          ) [ConstDeclarations]
+        ) [DeclarationList]
+        VarDeclarations(
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+            VarListElem(
+              VarListUnit(
+               mat
+                Matrix(
+                ) [Matrix]
+              ) [VarListUnit]
+            ) [VarListElem]
+          ) [VarDecl]
+        ) [VarDeclarations]
+      ) [DeclarationList]
+      VarDeclarations(
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          VarListElem(
+            VarListUnit(
+             niz
+              Arr(
+              ) [Arr]
+            ) [VarListUnit]
+          ) [VarListElem]
+        ) [VarDecl]
+      ) [VarDeclarations]
+    ) [DeclarationList]
+    VarDeclarations(
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        VarListElem(
+          VarListUnit(
+           mat2
+            Matrix(
+            ) [Matrix]
+          ) [VarListUnit]
+        ) [VarListElem]
+      ) [VarDecl]
+    ) [VarDeclarations]
+  ) [DeclarationList]
+  MethodDecl(
+    VoidReturnType(
+    ) [VoidReturnType]
+    MethName(
+     main
+    ) [MethName]
+    NoFormPars(
+    ) [NoFormPars]
+    NoMethVars(
+    ) [NoMethVars]
+    Statements(
+      Statements(
+        Statements(
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            DesigStmt(
+              AssignDeSt(
+                DataDesignator(
+                 niz
+                ) [DataDesignator]
+                TermExpr(
+                  FactorTerm(
+                    NewArray(
+                      Type(
+                       int
+                      ) [Type]
+                      TermExpr(
+                        FactorTerm(
+                          NumFactor(
+                            NumConst(
+                             3
+                            ) [NumConst]
+                          ) [NumFactor]
+                        ) [FactorTerm]
+                      ) [TermExpr]
+                    ) [NewArray]
+                  ) [FactorTerm]
+                ) [TermExpr]
+              ) [AssignDeSt]
+            ) [DesigStmt]
+          ) [Statements]
+          DesigStmt(
+            AssignDeSt(
+              DataDesignator(
+               mat
+              ) [DataDesignator]
+              TermExpr(
+                FactorTerm(
+                  NewMatrix(
+                    Type(
+                     int
+                    ) [Type]
+                    TermExpr(
+                      FactorTerm(
+                        NumFactor(
+                          NumConst(
+                           2
+                          ) [NumConst]
+                        ) [NumFactor]
+                      ) [FactorTerm]
+                    ) [TermExpr]
+                    TermExpr(
+                      FactorTerm(
+                        NumFactor(
+                          NumConst(
+                           2
+                          ) [NumConst]
+                        ) [NumFactor]
+                      ) [FactorTerm]
+                    ) [TermExpr]
+                  ) [NewMatrix]
+                ) [FactorTerm]
+              ) [TermExpr]
+            ) [AssignDeSt]
+          ) [DesigStmt]
+        ) [Statements]
+        DesigStmt(
+          AssignDeSt(
+            DataDesignator(
+             mat2
+            ) [DataDesignator]
+            TermExpr(
+              FactorTerm(
+                NewMatrix(
+                  Type(
+                   int
+                  ) [Type]
+                  TermExpr(
+                    FactorTerm(
+                      NumFactor(
+                        NumConst(
+                         3
+                        ) [NumConst]
+                      ) [NumFactor]
+                    ) [FactorTerm]
+                  ) [TermExpr]
+                  TermExpr(
+                    FactorTerm(
+                      NumFactor(
+                        NumConst(
+                         4
+                        ) [NumConst]
+                      ) [NumFactor]
+                    ) [FactorTerm]
+                  ) [TermExpr]
+                ) [NewMatrix]
+              ) [FactorTerm]
+            ) [TermExpr]
+          ) [AssignDeSt]
+        ) [DesigStmt]
+      ) [Statements]
+      DesigStmt(
+        AssignDeSt(
+          ArrayDesignator(
+            ArrayName(
+             mat
+            ) [ArrayName]
+            TermExpr(
+              FactorTerm(
+                NumFactor(
+                  NumConst(
+                   0
+                  ) [NumConst]
+                ) [NumFactor]
+              ) [FactorTerm]
+            ) [TermExpr]
+          ) [ArrayDesignator]
+          TermExpr(
+            FactorTerm(
+              DesignatorFactor(
+                DataDesignator(
+                 niz
+                ) [DataDesignator]
+              ) [DesignatorFactor]
+            ) [FactorTerm]
+          ) [TermExpr]
+        ) [AssignDeSt]
+      ) [DesigStmt]
+    ) [Statements]
+  ) [MethodDecl]
+) [Program]
+INFO  21:02:30,501 - {{===============================][   Semanticka Analiza   ][===============================}}
+INFO  21:02:30,503 - Konstanta one deklarisana na liniji 3
+INFO  21:02:30,503 - Deklarisana globalna promenljiva - matrica mat na liniji 4
+INFO  21:02:30,503 - Deklarisana globalna promenljiva - niz niz na liniji 5
+INFO  21:02:30,503 - Deklarisana globalna promenljiva - matrica mat2 na liniji 6
+INFO  21:02:30,503 - Objekat niz je iskoriscen na liniji 11
+INFO  21:02:30,503 - Objekat mat je iskoriscen na liniji 12
+INFO  21:02:30,503 - Objekat mat2 je iskoriscen na liniji 13
+INFO  21:02:30,503 - Objekat niz je iskoriscen na liniji 14
+INFO  21:02:30,503 - {{======================================][   Kraj   ][======================================}}
+INFO  21:02:30,506 - Uspesno kompajlovan program. Mozete ga naci u test/program.obj
+INFO  21:02:30,506 - Izvrsavanje kompajlera je trajalo: 36 ms.

@@ -1,0 +1,12 @@
+INFO  17:18:49,184 - Izabrani fajl: C:\Users\User\Desktop\pp1jul\MJCompiler\test\test1.mj
+INFO  17:18:49,184 - KOMPILACIJA ZAPOCETA
+INFO  17:18:49,186 - {{=====================================][   Lekser   ][=====================================}}
+INFO  17:18:49,201 - #2 program
+INFO  17:18:49,201 - #28 test1
+INFO  17:18:49,201 - #28 cosnt
+INFO  17:18:49,202 - #28 int
+INFO  17:18:49,202 - #28 a
+ERROR 17:18:49,202 - 
+Sintaksna greska na liniji 5
+ERROR 17:18:49,202 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 5
+INFO  17:18:49,202 - {{=====================================][   Parser   ][=====================================}}

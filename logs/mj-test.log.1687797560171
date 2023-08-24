@@ -1,0 +1,230 @@
+INFO  18:38:38,576 - Izabrani fajl: C:\Users\User\Desktop\pp1jul\MJCompiler\test\test1.mj
+INFO  18:38:38,577 - [[~~~=============================~~~MJ COMPILER STARTING~~~=============================~~~]]
+INFO  18:38:38,578 - {{================================][   Leksicka analiza   ][================================}}
+INFO  18:38:38,593 - #2 program
+INFO  18:38:38,593 - #28 test1
+INFO  18:38:38,593 - #6 const
+INFO  18:38:38,594 - #28 int
+INFO  18:38:38,594 - #28 a
+INFO  18:38:38,594 - #24 =
+INFO  18:38:38,594 - #25 f
+INFO  18:38:38,594 - #9 ;
+INFO  18:38:38,595 - #6 const
+INFO  18:38:38,596 - #28 char
+INFO  18:38:38,596 - #28 b
+INFO  18:38:38,596 - #24 =
+INFO  18:38:38,596 - #27 646
+INFO  18:38:38,596 - #9 ;
+INFO  18:38:38,596 - #6 const
+INFO  18:38:38,596 - #28 bool
+INFO  18:38:38,596 - #28 c
+INFO  18:38:38,596 - #24 =
+INFO  18:38:38,596 - #27 5
+INFO  18:38:38,597 - #9 ;
+INFO  18:38:38,597 - #6 const
+INFO  18:38:38,597 - #28 char
+INFO  18:38:38,597 - #28 nizch
+INFO  18:38:38,597 - #13 [
+ERROR 18:38:38,597 - 
+Sintaksna greska na liniji 9
+INFO  18:38:38,597 - #14 ]
+INFO  18:38:38,597 - #9 ;
+INFO  18:38:38,597 - #15 {
+INFO  18:38:38,597 - #10 void
+INFO  18:38:38,597 - #28 main
+ERROR 18:38:38,597 - Greska
+INFO  18:38:38,598 - #11 (
+INFO  18:38:38,598 - #12 )
+INFO  18:38:38,599 - #15 {
+INFO  18:38:38,599 - #28 b
+INFO  18:38:38,599 - #17 ++
+INFO  18:38:38,599 - #9 ;
+INFO  18:38:38,599 - #4 print
+INFO  18:38:38,599 - #11 (
+INFO  18:38:38,600 - #28 nizch
+INFO  18:38:38,600 - #12 )
+INFO  18:38:38,600 - #9 ;
+INFO  18:38:38,600 - #5 read
+INFO  18:38:38,600 - #11 (
+INFO  18:38:38,600 - #28 nizch
+INFO  18:38:38,600 - #12 )
+INFO  18:38:38,600 - #9 ;
+INFO  18:38:38,600 - #28 nizch
+INFO  18:38:38,600 - #24 =
+INFO  18:38:38,600 - #7 new
+INFO  18:38:38,601 - #28 char
+INFO  18:38:38,601 - #13 [
+INFO  18:38:38,601 - #28 c
+INFO  18:38:38,601 - #14 ]
+INFO  18:38:38,601 - #13 [
+INFO  18:38:38,601 - #27 6
+INFO  18:38:38,601 - #14 ]
+INFO  18:38:38,601 - #9 ;
+INFO  18:38:38,601 - #16 }
+INFO  18:38:38,601 - #16 }
+INFO  18:38:38,602 - {{================================][   Sintaksna analiza   ][===============================}}
+INFO  18:38:38,605 - Program(
+  ProgName(
+   test1
+  ) [ProgName]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        DeclarationList(
+          NoDeclaration(
+          ) [NoDeclaration]
+          ConstDeclarations(
+            ConstDecl(
+              Type(
+               int
+              ) [Type]
+              ConstListElem(
+                SingleConstDecl(
+                 a
+                  ConstChar(
+                    CharConst(
+                     f
+                    ) [CharConst]
+                  ) [ConstChar]
+                ) [SingleConstDecl]
+              ) [ConstListElem]
+            ) [ConstDecl]
+          ) [ConstDeclarations]
+        ) [DeclarationList]
+        ConstDeclarations(
+          ConstDecl(
+            Type(
+             char
+            ) [Type]
+            ConstListElem(
+              SingleConstDecl(
+               b
+                ConstInt(
+                  NumConst(
+                   646
+                  ) [NumConst]
+                ) [ConstInt]
+              ) [SingleConstDecl]
+            ) [ConstListElem]
+          ) [ConstDecl]
+        ) [ConstDeclarations]
+      ) [DeclarationList]
+      ConstDeclarations(
+        ConstDecl(
+          Type(
+           bool
+          ) [Type]
+          ConstListElem(
+            SingleConstDecl(
+             c
+              ConstInt(
+                NumConst(
+                 5
+                ) [NumConst]
+              ) [ConstInt]
+            ) [SingleConstDecl]
+          ) [ConstListElem]
+        ) [ConstDecl]
+      ) [ConstDeclarations]
+    ) [DeclarationList]
+    ConstDeclarations(
+      ConstDecl(
+        Type(
+         char
+        ) [Type]
+        ConstListElem(
+          ConstUnitError(
+          ) [ConstUnitError]
+        ) [ConstListElem]
+      ) [ConstDecl]
+    ) [ConstDeclarations]
+  ) [DeclarationList]
+  MethodDecl(
+    VoidReturnType(
+    ) [VoidReturnType]
+    MethName(
+     main
+    ) [MethName]
+    NoFormPars(
+    ) [NoFormPars]
+    NoMethVars(
+    ) [NoMethVars]
+    Statements(
+      Statements(
+        Statements(
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            DesigStmt(
+              IncrDeSt(
+                DataDesignator(
+                 b
+                ) [DataDesignator]
+              ) [IncrDeSt]
+            ) [DesigStmt]
+          ) [Statements]
+          PrintStmt(
+            TermExpr(
+              FactorTerm(
+                DesignatorFactor(
+                  DataDesignator(
+                   nizch
+                  ) [DataDesignator]
+                ) [DesignatorFactor]
+              ) [FactorTerm]
+            ) [TermExpr]
+          ) [PrintStmt]
+        ) [Statements]
+        ReadStmt(
+          DataDesignator(
+           nizch
+          ) [DataDesignator]
+        ) [ReadStmt]
+      ) [Statements]
+      DesigStmt(
+        AssignDeSt(
+          DataDesignator(
+           nizch
+          ) [DataDesignator]
+          TermExpr(
+            FactorTerm(
+              NewMatrix(
+                Type(
+                 char
+                ) [Type]
+                TermExpr(
+                  FactorTerm(
+                    DesignatorFactor(
+                      DataDesignator(
+                       c
+                      ) [DataDesignator]
+                    ) [DesignatorFactor]
+                  ) [FactorTerm]
+                ) [TermExpr]
+                TermExpr(
+                  FactorTerm(
+                    NumFactor(
+                      NumConst(
+                       6
+                      ) [NumConst]
+                    ) [NumFactor]
+                  ) [FactorTerm]
+                ) [TermExpr]
+              ) [NewMatrix]
+            ) [FactorTerm]
+          ) [TermExpr]
+        ) [AssignDeSt]
+      ) [DesigStmt]
+    ) [Statements]
+  ) [MethodDecl]
+) [Program]
+INFO  18:38:38,605 - {{===============================][   Semanticka Analiza   ][===============================}}
+ERROR 18:38:38,606 - Tip konstante a se ne poklapa sa vrednoscu. na liniji 5
+ERROR 18:38:38,606 - Tip konstante b se ne poklapa sa vrednoscu. na liniji 6
+ERROR 18:38:38,606 - Tip konstante c se ne poklapa sa vrednoscu. na liniji 7
+ERROR 18:38:38,606 - Ime b nije deklarisano. na liniji 15
+ERROR 18:38:38,606 - Podatak koji se inkrementira ili nije promenljiva ili je nedefinisan na liniji 15
+ERROR 18:38:38,606 - Ime nizch nije deklarisano. na liniji 16
+ERROR 18:38:38,606 - Podatak koji se inkrementira ili nije promenljiva ili je nedefinisan na liniji 16
+ERROR 18:38:38,606 - Nedozvoljen podatak za print. Ocekivan int, char ili bool. na liniji 16
+ERROR 18:38:38,606 - Ime nizch nije deklarisano. na liniji 17

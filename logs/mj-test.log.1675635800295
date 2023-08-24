@@ -1,0 +1,646 @@
+INFO  23:22:26,411 - Compiling source file: /home/user/eclipse-workspace/MJCompiler/test/program.mj
+INFO  23:22:26,416 - ======================================	Lexer	======================================
+INFO  23:22:26,440 - #2 program
+INFO  23:22:26,440 - #25 MJProgram
+INFO  23:22:26,440 - #25 int
+INFO  23:22:26,440 - #25 x
+INFO  23:22:26,441 - #5 ;
+INFO  23:22:26,441 - #25 int
+INFO  23:22:26,442 - #25 y
+INFO  23:22:26,442 - #5 ;
+INFO  23:22:26,442 - #25 int
+INFO  23:22:26,442 - #25 arr
+INFO  23:22:26,443 - #10 [
+INFO  23:22:26,443 - #11 ]
+INFO  23:22:26,443 - #5 ;
+INFO  23:22:26,443 - #3 {
+INFO  23:22:26,443 - #25 int
+INFO  23:22:26,444 - #25 k
+INFO  23:22:26,444 - #6 (
+INFO  23:22:26,445 - #7 )
+INFO  23:22:26,445 - #25 int
+INFO  23:22:26,445 - #25 c
+INFO  23:22:26,445 - #5 ;
+INFO  23:22:26,446 - #3 {
+INFO  23:22:26,446 - #25 c
+INFO  23:22:26,446 - #12 =
+INFO  23:22:26,446 - #26 1
+INFO  23:22:26,446 - #5 ;
+INFO  23:22:26,448 - #21 return
+INFO  23:22:26,448 - #25 c
+INFO  23:22:26,448 - #13 +
+INFO  23:22:26,448 - #26 2
+INFO  23:22:26,449 - #5 ;
+INFO  23:22:26,449 - #4 }
+INFO  23:22:26,449 - #25 int
+INFO  23:22:26,449 - #25 main
+INFO  23:22:26,450 - #6 (
+INFO  23:22:26,450 - #7 )
+INFO  23:22:26,450 - #3 {
+INFO  23:22:26,450 - #25 y
+INFO  23:22:26,450 - #12 =
+INFO  23:22:26,450 - #26 2
+INFO  23:22:26,450 - #5 ;
+INFO  23:22:26,450 - #25 x
+INFO  23:22:26,450 - #12 =
+INFO  23:22:26,450 - #25 y
+INFO  23:22:26,450 - #13 +
+INFO  23:22:26,451 - #26 2
+INFO  23:22:26,451 - #5 ;
+INFO  23:22:26,451 - #25 y
+INFO  23:22:26,451 - #12 =
+INFO  23:22:26,451 - #25 x
+INFO  23:22:26,451 - #13 +
+INFO  23:22:26,451 - #26 3
+INFO  23:22:26,451 - #5 ;
+INFO  23:22:26,451 - #25 arr
+INFO  23:22:26,451 - #12 =
+INFO  23:22:26,452 - #22 new
+INFO  23:22:26,452 - #25 int
+INFO  23:22:26,452 - #10 [
+INFO  23:22:26,452 - #26 3
+INFO  23:22:26,452 - #11 ]
+INFO  23:22:26,452 - #5 ;
+INFO  23:22:26,452 - #25 arr
+INFO  23:22:26,452 - #10 [
+INFO  23:22:26,453 - #26 1
+INFO  23:22:26,453 - #11 ]
+INFO  23:22:26,453 - #12 =
+INFO  23:22:26,453 - #25 x
+INFO  23:22:26,453 - #14 -
+INFO  23:22:26,453 - #26 5
+INFO  23:22:26,454 - #5 ;
+INFO  23:22:26,454 - #25 arr
+INFO  23:22:26,454 - #10 [
+INFO  23:22:26,454 - #26 2
+INFO  23:22:26,455 - #11 ]
+INFO  23:22:26,455 - #12 =
+INFO  23:22:26,455 - #25 arr
+INFO  23:22:26,455 - #10 [
+INFO  23:22:26,455 - #26 1
+INFO  23:22:26,455 - #11 ]
+INFO  23:22:26,455 - #13 +
+INFO  23:22:26,455 - #25 y
+INFO  23:22:26,456 - #5 ;
+INFO  23:22:26,456 - #10 [
+INFO  23:22:26,456 - #25 y
+INFO  23:22:26,456 - #8 ,
+INFO  23:22:26,456 - #25 x
+INFO  23:22:26,456 - #11 ]
+INFO  23:22:26,456 - #12 =
+INFO  23:22:26,457 - #25 arr
+INFO  23:22:26,457 - #5 ;
+INFO  23:22:26,457 - #9 print
+INFO  23:22:26,457 - #6 (
+INFO  23:22:26,457 - #25 y
+INFO  23:22:26,457 - #7 )
+INFO  23:22:26,457 - #5 ;
+INFO  23:22:26,457 - #9 print
+INFO  23:22:26,458 - #6 (
+INFO  23:22:26,458 - #25 x
+INFO  23:22:26,458 - #7 )
+INFO  23:22:26,458 - #5 ;
+INFO  23:22:26,458 - #21 return
+INFO  23:22:26,458 - #26 0
+INFO  23:22:26,458 - #5 ;
+INFO  23:22:26,458 - #4 }
+INFO  23:22:26,458 - #4 }
+INFO  23:22:26,459 - ======================================	Parser	======================================
+INFO  23:22:26,463 - Program(
+  ProgramName(
+   MJProgram
+  ) [ProgramName]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        NoDecList(
+        ) [NoDecList]
+        VarElem(
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+            OneVarList(
+              Variable(
+               x
+                NoArr(
+                ) [NoArr]
+              ) [Variable]
+            ) [OneVarList]
+          ) [VarDecl]
+        ) [VarElem]
+      ) [DeclarationList]
+      VarElem(
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          OneVarList(
+            Variable(
+             y
+              NoArr(
+              ) [NoArr]
+            ) [Variable]
+          ) [OneVarList]
+        ) [VarDecl]
+      ) [VarElem]
+    ) [DeclarationList]
+    VarElem(
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        OneVarList(
+          Variable(
+           arr
+            ArrDecl(
+            ) [ArrDecl]
+          ) [Variable]
+        ) [OneVarList]
+      ) [VarDecl]
+    ) [VarElem]
+  ) [DeclarationList]
+  MethodListDeclarations(
+    MethodListDeclarations(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDeclarations(
+        MtdTypeName(
+          Type(
+           int
+          ) [Type]
+         k
+        ) [MtdTypeName]
+        NoFormParam(
+        ) [NoFormParam]
+        DeclarationList(
+          NoDecList(
+          ) [NoDecList]
+          VarElem(
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+              OneVarList(
+                Variable(
+                 c
+                  NoArr(
+                  ) [NoArr]
+                ) [Variable]
+              ) [OneVarList]
+            ) [VarDecl]
+          ) [VarElem]
+        ) [DeclarationList]
+        StmtsList(
+          StmtsList(
+            NoStmt(
+            ) [NoStmt]
+            SingleStmt(
+              DesignatorStmt(
+                EqualStmt(
+                  Desig(
+                   c
+                  ) [Desig]
+                  EqualStatementDecl(
+                    ExprElemDecl(
+                      TermDecl(
+                        NumFactor(
+                          NumConst(
+                           1
+                          ) [NumConst]
+                        ) [NumFactor]
+                        NoMulopListDecl(
+                        ) [NoMulopListDecl]
+                      ) [TermDecl]
+                      NoAddopListDecl(
+                      ) [NoAddopListDecl]
+                    ) [ExprElemDecl]
+                  ) [EqualStatementDecl]
+                ) [EqualStmt]
+              ) [DesignatorStmt]
+            ) [SingleStmt]
+          ) [StmtsList]
+          SingleStmt(
+            RetExStmt(
+              ExprElemDecl(
+                TermDecl(
+                  DesigFactor(
+                    Desig(
+                     c
+                    ) [Desig]
+                  ) [DesigFactor]
+                  NoMulopListDecl(
+                  ) [NoMulopListDecl]
+                ) [TermDecl]
+                AddopListDecl(
+                  NoAddopListDecl(
+                  ) [NoAddopListDecl]
+                  Add(
+                  ) [Add]
+                  TermDecl(
+                    NumFactor(
+                      NumConst(
+                       2
+                      ) [NumConst]
+                    ) [NumFactor]
+                    NoMulopListDecl(
+                    ) [NoMulopListDecl]
+                  ) [TermDecl]
+                ) [AddopListDecl]
+              ) [ExprElemDecl]
+            ) [RetExStmt]
+          ) [SingleStmt]
+        ) [StmtsList]
+      ) [MethodDeclarations]
+    ) [MethodListDeclarations]
+    MethodDeclarations(
+      MtdTypeName(
+        Type(
+         int
+        ) [Type]
+       main
+      ) [MtdTypeName]
+      NoFormParam(
+      ) [NoFormParam]
+      NoDecList(
+      ) [NoDecList]
+      StmtsList(
+        StmtsList(
+          StmtsList(
+            StmtsList(
+              StmtsList(
+                StmtsList(
+                  StmtsList(
+                    StmtsList(
+                      StmtsList(
+                        StmtsList(
+                          NoStmt(
+                          ) [NoStmt]
+                          SingleStmt(
+                            DesignatorStmt(
+                              EqualStmt(
+                                Desig(
+                                 y
+                                ) [Desig]
+                                EqualStatementDecl(
+                                  ExprElemDecl(
+                                    TermDecl(
+                                      NumFactor(
+                                        NumConst(
+                                         2
+                                        ) [NumConst]
+                                      ) [NumFactor]
+                                      NoMulopListDecl(
+                                      ) [NoMulopListDecl]
+                                    ) [TermDecl]
+                                    NoAddopListDecl(
+                                    ) [NoAddopListDecl]
+                                  ) [ExprElemDecl]
+                                ) [EqualStatementDecl]
+                              ) [EqualStmt]
+                            ) [DesignatorStmt]
+                          ) [SingleStmt]
+                        ) [StmtsList]
+                        SingleStmt(
+                          DesignatorStmt(
+                            EqualStmt(
+                              Desig(
+                               x
+                              ) [Desig]
+                              EqualStatementDecl(
+                                ExprElemDecl(
+                                  TermDecl(
+                                    DesigFactor(
+                                      Desig(
+                                       y
+                                      ) [Desig]
+                                    ) [DesigFactor]
+                                    NoMulopListDecl(
+                                    ) [NoMulopListDecl]
+                                  ) [TermDecl]
+                                  AddopListDecl(
+                                    NoAddopListDecl(
+                                    ) [NoAddopListDecl]
+                                    Add(
+                                    ) [Add]
+                                    TermDecl(
+                                      NumFactor(
+                                        NumConst(
+                                         2
+                                        ) [NumConst]
+                                      ) [NumFactor]
+                                      NoMulopListDecl(
+                                      ) [NoMulopListDecl]
+                                    ) [TermDecl]
+                                  ) [AddopListDecl]
+                                ) [ExprElemDecl]
+                              ) [EqualStatementDecl]
+                            ) [EqualStmt]
+                          ) [DesignatorStmt]
+                        ) [SingleStmt]
+                      ) [StmtsList]
+                      SingleStmt(
+                        DesignatorStmt(
+                          EqualStmt(
+                            Desig(
+                             y
+                            ) [Desig]
+                            EqualStatementDecl(
+                              ExprElemDecl(
+                                TermDecl(
+                                  DesigFactor(
+                                    Desig(
+                                     x
+                                    ) [Desig]
+                                  ) [DesigFactor]
+                                  NoMulopListDecl(
+                                  ) [NoMulopListDecl]
+                                ) [TermDecl]
+                                AddopListDecl(
+                                  NoAddopListDecl(
+                                  ) [NoAddopListDecl]
+                                  Add(
+                                  ) [Add]
+                                  TermDecl(
+                                    NumFactor(
+                                      NumConst(
+                                       3
+                                      ) [NumConst]
+                                    ) [NumFactor]
+                                    NoMulopListDecl(
+                                    ) [NoMulopListDecl]
+                                  ) [TermDecl]
+                                ) [AddopListDecl]
+                              ) [ExprElemDecl]
+                            ) [EqualStatementDecl]
+                          ) [EqualStmt]
+                        ) [DesignatorStmt]
+                      ) [SingleStmt]
+                    ) [StmtsList]
+                    SingleStmt(
+                      DesignatorStmt(
+                        EqualStmt(
+                          Desig(
+                           arr
+                          ) [Desig]
+                          EqualStatementDecl(
+                            ExprElemDecl(
+                              TermDecl(
+                                NewDeclFactor(
+                                  Type(
+                                   int
+                                  ) [Type]
+                                  ExprElemDecl(
+                                    TermDecl(
+                                      NumFactor(
+                                        NumConst(
+                                         3
+                                        ) [NumConst]
+                                      ) [NumFactor]
+                                      NoMulopListDecl(
+                                      ) [NoMulopListDecl]
+                                    ) [TermDecl]
+                                    NoAddopListDecl(
+                                    ) [NoAddopListDecl]
+                                  ) [ExprElemDecl]
+                                ) [NewDeclFactor]
+                                NoMulopListDecl(
+                                ) [NoMulopListDecl]
+                              ) [TermDecl]
+                              NoAddopListDecl(
+                              ) [NoAddopListDecl]
+                            ) [ExprElemDecl]
+                          ) [EqualStatementDecl]
+                        ) [EqualStmt]
+                      ) [DesignatorStmt]
+                    ) [SingleStmt]
+                  ) [StmtsList]
+                  SingleStmt(
+                    DesignatorStmt(
+                      EqualStmt(
+                        DesigArray(
+                          ArrIdentDecl(
+                           arr
+                          ) [ArrIdentDecl]
+                          ExprElemDecl(
+                            TermDecl(
+                              NumFactor(
+                                NumConst(
+                                 1
+                                ) [NumConst]
+                              ) [NumFactor]
+                              NoMulopListDecl(
+                              ) [NoMulopListDecl]
+                            ) [TermDecl]
+                            NoAddopListDecl(
+                            ) [NoAddopListDecl]
+                          ) [ExprElemDecl]
+                        ) [DesigArray]
+                        EqualStatementDecl(
+                          ExprElemDecl(
+                            TermDecl(
+                              DesigFactor(
+                                Desig(
+                                 x
+                                ) [Desig]
+                              ) [DesigFactor]
+                              NoMulopListDecl(
+                              ) [NoMulopListDecl]
+                            ) [TermDecl]
+                            AddopListDecl(
+                              NoAddopListDecl(
+                              ) [NoAddopListDecl]
+                              Sub(
+                              ) [Sub]
+                              TermDecl(
+                                NumFactor(
+                                  NumConst(
+                                   5
+                                  ) [NumConst]
+                                ) [NumFactor]
+                                NoMulopListDecl(
+                                ) [NoMulopListDecl]
+                              ) [TermDecl]
+                            ) [AddopListDecl]
+                          ) [ExprElemDecl]
+                        ) [EqualStatementDecl]
+                      ) [EqualStmt]
+                    ) [DesignatorStmt]
+                  ) [SingleStmt]
+                ) [StmtsList]
+                SingleStmt(
+                  DesignatorStmt(
+                    EqualStmt(
+                      DesigArray(
+                        ArrIdentDecl(
+                         arr
+                        ) [ArrIdentDecl]
+                        ExprElemDecl(
+                          TermDecl(
+                            NumFactor(
+                              NumConst(
+                               2
+                              ) [NumConst]
+                            ) [NumFactor]
+                            NoMulopListDecl(
+                            ) [NoMulopListDecl]
+                          ) [TermDecl]
+                          NoAddopListDecl(
+                          ) [NoAddopListDecl]
+                        ) [ExprElemDecl]
+                      ) [DesigArray]
+                      EqualStatementDecl(
+                        ExprElemDecl(
+                          TermDecl(
+                            DesigFactor(
+                              DesigArray(
+                                ArrIdentDecl(
+                                 arr
+                                ) [ArrIdentDecl]
+                                ExprElemDecl(
+                                  TermDecl(
+                                    NumFactor(
+                                      NumConst(
+                                       1
+                                      ) [NumConst]
+                                    ) [NumFactor]
+                                    NoMulopListDecl(
+                                    ) [NoMulopListDecl]
+                                  ) [TermDecl]
+                                  NoAddopListDecl(
+                                  ) [NoAddopListDecl]
+                                ) [ExprElemDecl]
+                              ) [DesigArray]
+                            ) [DesigFactor]
+                            NoMulopListDecl(
+                            ) [NoMulopListDecl]
+                          ) [TermDecl]
+                          AddopListDecl(
+                            NoAddopListDecl(
+                            ) [NoAddopListDecl]
+                            Add(
+                            ) [Add]
+                            TermDecl(
+                              DesigFactor(
+                                Desig(
+                                 y
+                                ) [Desig]
+                              ) [DesigFactor]
+                              NoMulopListDecl(
+                              ) [NoMulopListDecl]
+                            ) [TermDecl]
+                          ) [AddopListDecl]
+                        ) [ExprElemDecl]
+                      ) [EqualStatementDecl]
+                    ) [EqualStmt]
+                  ) [DesignatorStmt]
+                ) [SingleStmt]
+              ) [StmtsList]
+              SingleStmt(
+                DesignatorStmt(
+                  DesignatorList(
+                    DesigArrayList(
+                      SingleElementDesig(
+                        DesigListElement(
+                          Desig(
+                           y
+                          ) [Desig]
+                        ) [DesigListElement]
+                      ) [SingleElementDesig]
+                      DesigListElement(
+                        Desig(
+                         x
+                        ) [Desig]
+                      ) [DesigListElement]
+                    ) [DesigArrayList]
+                    Desig(
+                     arr
+                    ) [Desig]
+                  ) [DesignatorList]
+                ) [DesignatorStmt]
+              ) [SingleStmt]
+            ) [StmtsList]
+            SingleStmt(
+              PrintStmt(
+                ExprElemDecl(
+                  TermDecl(
+                    DesigFactor(
+                      Desig(
+                       y
+                      ) [Desig]
+                    ) [DesigFactor]
+                    NoMulopListDecl(
+                    ) [NoMulopListDecl]
+                  ) [TermDecl]
+                  NoAddopListDecl(
+                  ) [NoAddopListDecl]
+                ) [ExprElemDecl]
+              ) [PrintStmt]
+            ) [SingleStmt]
+          ) [StmtsList]
+          SingleStmt(
+            PrintStmt(
+              ExprElemDecl(
+                TermDecl(
+                  DesigFactor(
+                    Desig(
+                     x
+                    ) [Desig]
+                  ) [DesigFactor]
+                  NoMulopListDecl(
+                  ) [NoMulopListDecl]
+                ) [TermDecl]
+                NoAddopListDecl(
+                ) [NoAddopListDecl]
+              ) [ExprElemDecl]
+            ) [PrintStmt]
+          ) [SingleStmt]
+        ) [StmtsList]
+        SingleStmt(
+          RetExStmt(
+            ExprElemDecl(
+              TermDecl(
+                NumFactor(
+                  NumConst(
+                   0
+                  ) [NumConst]
+                ) [NumFactor]
+                NoMulopListDecl(
+                ) [NoMulopListDecl]
+              ) [TermDecl]
+              NoAddopListDecl(
+              ) [NoAddopListDecl]
+            ) [ExprElemDecl]
+          ) [RetExStmt]
+        ) [SingleStmt]
+      ) [StmtsList]
+    ) [MethodDeclarations]
+  ) [MethodListDeclarations]
+) [Program]
+INFO  23:22:26,464 - ======================================	Semantic		======================================
+INFO  23:22:26,467 - Globalna promenljiva x deklarisana. na liniji 2
+INFO  23:22:26,467 - Globalna promenljiva y deklarisana. na liniji 2
+INFO  23:22:26,467 - Globalna promenljiva arr deklarisana. na liniji 2
+INFO  23:22:26,467 - Obradjuje se funkcija k na liniji 5
+INFO  23:22:26,467 - Lokalna promenljiva c deklarisana. na liniji 5
+INFO  23:22:26,467 - Uzet lokalni podatak c na liniji 6
+INFO  23:22:26,468 - Uzet lokalni podatak c na liniji 7
+INFO  23:22:26,468 - Obradjuje se funkcija main na liniji 10
+INFO  23:22:26,468 - Uzet globalni podatak y na liniji 11
+INFO  23:22:26,468 - Uzet globalni podatak x na liniji 12
+INFO  23:22:26,468 - Uzet globalni podatak y na liniji 12
+INFO  23:22:26,468 - Uzet globalni podatak y na liniji 13
+INFO  23:22:26,468 - Uzet globalni podatak x na liniji 13
+INFO  23:22:26,468 - Uzet globalni podatak arr na liniji 14
+INFO  23:22:26,469 - Uzet element niza arr na liniji 15
+INFO  23:22:26,469 - Uzet globalni podatak x na liniji 15
+INFO  23:22:26,469 - Uzet element niza arr na liniji 16
+INFO  23:22:26,469 - Uzet element niza arr na liniji 16
+INFO  23:22:26,469 - Uzet globalni podatak y na liniji 16
+INFO  23:22:26,469 - Uzet globalni podatak y na liniji 17
+INFO  23:22:26,469 - Uzet globalni podatak x na liniji 17
+INFO  23:22:26,469 - Uzet globalni podatak arr na liniji 17
+INFO  23:22:26,470 - Uzet globalni podatak y na liniji 18
+INFO  23:22:26,470 - Uzet globalni podatak x na liniji 19
+INFO  23:22:26,470 - ======================================	End		======================================
+INFO  23:22:26,473 - Done...
